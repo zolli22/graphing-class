@@ -13,6 +13,10 @@ output:
       countIncrementalSlides: false
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = F, warning = F)
+```
+
 ```{r, message = F, echo = F}
 # data packages
 library(palmerpenguins)
@@ -151,17 +155,15 @@ final_houses <- battles %>%
 
 ---
 
-## Step 4  
-Graph! 
-```{r, echo = F}
+## Step 4: graph!  
+```{r}
 chordDiagram(battles)
 ```
 hmmm.... its messy   
 
 ---
 
-## second shot!
-```{r, echo = F}
+```{r}
 chordDiagram(final_houses)
 ```
 filtered so both attacking and defending house are involved in 2 or more battles
@@ -197,9 +199,9 @@ chordDiagram(final_houses, grid.col = tv_cols)
 ---
 
 ## game of thrones battles
-::: {align="center"}
+
 <img src="images/got_battle.jpeg" width="500" height="500"/>
-:::
+
 
 ---
 
@@ -242,6 +244,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color = species))+
 ```{r, echo = T}
 library(ggfx)
 ```
+
 ```{r}
 ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g))+
   dark_theme_linedraw()+
@@ -252,6 +255,8 @@ ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g))+
   with_outer_glow(geom_point(data=filter(penguins, species == 'Chinstrap'),fill="white"),
                   colour="yellow", sigma=4, expand=2)
 ```
+
+---
 
 ## themes!
 ```{r, echo = T}
@@ -264,6 +269,8 @@ ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color = species))+
   theme_pomological()
 ```
 
+---
+
 ## fancier!
 ```{r}
 ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color = species))+
@@ -271,6 +278,8 @@ ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color = species))+
   scale_color_pomological()+
  theme_pomological("Homemade Apple", 16)
 ```
+
+---
 
 ## ggcute
 ```{r, echo = T}
@@ -283,7 +292,8 @@ ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color = species))+
   theme_fairyfloss()
 ```
 
-## 
+---
+
 ```{r}
 ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color = species))+
   geom_point()+
@@ -291,6 +301,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color = species))+
   theme_sugarpill()
 ```
 
+---
 
 ## back to basics
 ```{r}
@@ -307,6 +318,8 @@ a <- ggplot(myname, aes(x = year, y = n, color = name))+
 a
 ```
 
+---
+
 ## neon lines!
 ```{r}
 ggplot(myname, aes(x = year, y = n, color = name))+
@@ -316,6 +329,8 @@ ggplot(myname, aes(x = year, y = n, color = name))+
   scale_color_manual(values = name_pal)
 ```
 
+---
+
 ## we can make it ... blurry?
 ```{r, echo = T}
 library(ggfx)
@@ -324,6 +339,8 @@ library(ggfx)
 ```{r}
 with_motion_blur(a, sigma = 3)
 ```
+
+---
 
 ## not sure why you'd ever need this...
 ```{r}
@@ -352,6 +369,8 @@ ggplot() +
   labs(x = NULL, y = NULL)
 ```
 
+---
+
 ## moons?
 ```{r, echo = T}
 library(gggibbous)
@@ -373,6 +392,7 @@ ggplot(lunardist, aes(date, distance)) +
   theme_minimal()
 ```
 
+---
 
 ## cats!
 ```{r}
@@ -382,6 +402,8 @@ ggplot(mtcars) +
   geom_cat(aes(mpg, wt), cat = "toast", size = 3)
 ```
 
+---
+
 ## dogs
 ```{r}
 library(ggdogs)
@@ -389,7 +411,9 @@ ggplot(mtcars) +
   geom_dog(aes(mpg, wt), dog = "glasses", size = 5)
 ```
 
-## bernie
+---
+
+## ...bernie?
 ```{r}
 library(ggbernie)
 
@@ -397,8 +421,10 @@ ggplot(mtcars) +
   geom_bernie(aes(mpg, wt), bernie = "sitting")
 ```
 
+---
+
 ## not my code!
-```{r, fig.width=4, fig.height=2.5}
+```{r}
 library(Ecdat)
 data(incomeInequality)
 
@@ -433,31 +459,38 @@ ggplot(dat, aes(x = Year, y = value, group = income, color = income)) +
    transition_reveal(Year)
 ```
 
-## generative art
-::: {align="center"}
-<img src="images/abstract-1.jpeg" width="600" height="600"/>
-:::
+---
 
-## 
-::: {align="center"}
+## generative art
+
+```{r}
+knitr::include_graphics("images/abstract-1.jpeg")
+```
+
+---
+
 <img src="images/abstract-2.png" width="600" height="600"/>
 :::
 
-## 
+---
+
 ::: {align="center"}
 <img src="images/gen-1.jpeg" width="600" height="600"/>
 :::
 
-## 
+---
+
 ::: {align="center"}
 <img src="images/gen-2.jpeg" width="600" height="600"/>
 :::
 
-##
+---
+
 ::: {align="center"}
 <img src="images/gen-3.jpeg" width="600" height="600"/>
 :::
 
+---
 
 ## more inspiration!
 [link](https://twitter.com/emilmalta/status/1378397237957570562) here  
@@ -466,7 +499,8 @@ ggplot(dat, aes(x = Year, y = value, group = income, color = income)) +
 <img src="images/moon.jpeg" width="400" height="600"/>
 :::
 
-## 
+---
+
 [link](https://twitter.com/spcanelon/status/1483254125915746305) here
 
 ::: {align="center"}
@@ -474,7 +508,8 @@ ggplot(dat, aes(x = Year, y = value, group = income, color = income)) +
 :::
 
 
-## 
+---
+
 [link](https://twitter.com/ijeamaka_a/status/1482744453714432002) here
 
 ::: {align="center"}
@@ -482,18 +517,27 @@ ggplot(dat, aes(x = Year, y = value, group = income, color = income)) +
 :::
 
 
-## 
+---
+
 [link](https://twitter.com/ryanahart/status/1482074159815577604) here
 
 ::: {align="center"}
 <img src="https://pbs.twimg.com/media/FJFh-_PX0AIFH-N?format=jpg&name=medium" width="500" height="500"/>
 :::
 
+---
+
 ## last disclaimer!
 
 when working with random or fun packages::  
 you are probably going to experience a lot of errors. sometimes installing packages is very weird and doesn't work, sometimes knitting will decide not to work.
 this is to be expected! sometimes packages interact with each other weirdly. sometimes they are out of date, or one of their dependencies 
+but -- have fun with it!!
+
+---
 
 ## code and resources
 
+for these slides: <https://github.com/zolli22/R_graphing_paideia_2022>
+
+for some of my example graphs: <https://twitter.com/ingrid_zoll/status/1384226763270623235>
