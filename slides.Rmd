@@ -90,7 +90,9 @@ smart thing: data, then chart
 
 what i do: chart, then data
 
+
 --- 
+
 
 ## Step 2  
 pick a chart type  
@@ -166,6 +168,7 @@ hmmm.... its messy
 ```{r}
 chordDiagram(final_houses)
 ```
+
 filtered so both attacking and defending house are involved in 2 or more battles
 
 ---
@@ -225,7 +228,6 @@ ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color = species))+
 ```
 
 ---
-
 ## what about... dark theme? and neon?
 ```{r, echo = T}
 library(ggdark)
@@ -463,76 +465,62 @@ ggplot(dat, aes(x = Year, y = value, group = income, color = income)) +
 
 ## generative art
 
-```{r}
-knitr::include_graphics("images/abstract-1.jpeg")
-```
+<img src="images/abstract-1.jpeg" width="600" height="600"/>
 
 ---
 
 <img src="images/abstract-2.png" width="600" height="600"/>
-:::
 
 ---
 
-::: {align="center"}
 <img src="images/gen-1.jpeg" width="600" height="600"/>
-:::
 
 ---
 
-::: {align="center"}
 <img src="images/gen-2.jpeg" width="600" height="600"/>
-:::
 
 ---
 
-::: {align="center"}
 <img src="images/gen-3.jpeg" width="600" height="600"/>
-:::
 
 ---
 
 ## more inspiration!
-[link](https://twitter.com/emilmalta/status/1378397237957570562) here  
-
-::: {align="center"}
-<img src="images/moon.jpeg" width="400" height="600"/>
-:::
+<img src="images/moon.jpeg" width="400" height="500"/> 
+[link](https://twitter.com/emilmalta/status/1378397237957570562) here
 
 ---
 
 [link](https://twitter.com/spcanelon/status/1483254125915746305) here
 
-::: {align="center"}
 <img src="https://pbs.twimg.com/media/FJWTOQnXwAEbf41?format=jpg&name=medium" width="500" height="500"/>
-:::
-
 
 ---
 
 [link](https://twitter.com/ijeamaka_a/status/1482744453714432002) here
 
-::: {align="center"}
 <img src="https://pbs.twimg.com/media/FJHUU0-VUAEx6Yt?format=jpg&name=medium" width="500" height="500"/>
-:::
-
 
 ---
 
 [link](https://twitter.com/ryanahart/status/1482074159815577604) here
 
-::: {align="center"}
 <img src="https://pbs.twimg.com/media/FJFh-_PX0AIFH-N?format=jpg&name=medium" width="500" height="500"/>
-:::
 
 ---
 
 ## last disclaimer!
 
 when working with random or fun packages::  
-you are probably going to experience a lot of errors. sometimes installing packages is very weird and doesn't work, sometimes knitting will decide not to work.
-this is to be expected! sometimes packages interact with each other weirdly. sometimes they are out of date, or one of their dependencies 
-but -- have fun with it!!
+- you are probably going to experience a lot of errors. 
+- sometimes installing packages is very weird and doesn't work
+- sometimes knitting will decide not to work.
+
+this is to be expected! 
+- sometimes packages interact with each other weirdly. 
+- sometimes they are out of date, or one of their dependencies needs to be updated
+
+# but -- have fun with it!!
 
 ---
 
